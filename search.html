@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <p>Brand name:</p>
+    <p><input id="brand" type="text"></p>
+    <button onclick="search()">Search</button>
+    <div id="responsediv"></div>
+    <script>
+        function search() {
+            $.post("", {
+                    brand: $("#brand").val()
+                },
+                function(data, status) {
+                    txt = "<table border = 1>"
+                    txt += "<tr><th>Brand</th><th>Manufacturer</th></tr>"
+                    for (obj in data) {
+                        txt += "<tr>"
+                        for (key in data[obj]) {
+                            txt += "<td>" + data[obj][key] + "</td>"
+                        }
+                        txt += "</tr>"
+                    }
+                    txt += "</table>"
+                    $("#responsediv").html(txt)
+                }
+            );
+        }
+
+    </script>
+</body>
+
+</html>

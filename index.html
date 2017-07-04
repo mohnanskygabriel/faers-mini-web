@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>INDEX</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Get hello after button click</h1>
+    <button type="button" onclick="sayHello()">Say hello, please!</button>
+    <p id="response">Place for response</p>
+    <form id="search" method="post">
+        <p>Brand name:</p>
+        <p><input type="text" name="brand"></p>
+        <p><input type="submit" value="Find this brand"></p>
+    </form>
+    <button type="button" onclick="resp()">Write response</button>
+    <div id="responsediv"></div>
+    <script>
+        function sayHello() {
+            document.getElementById("response").innerHTML = "Hello, good day!";
+        }
+    </script>
+    <script>
+        function resp() {
+            $("#responsediv").html("NEW RESPONSE")
+        }
+    </script>
+</body>
+
+</html>
