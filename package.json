@@ -1,0 +1,24 @@
+{
+  "name": "faers-view-and-rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pgconnection.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohnanskygabriel/faers-view-and-rest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohnanskygabriel/faers-view-and-rest/issues"
+  },
+  "homepage": "https://github.com/mohnanskygabriel/faers-view-and-rest#readme",
+  "dependencies": {
+    "pg": "^6.4.0"
+  }
+}
