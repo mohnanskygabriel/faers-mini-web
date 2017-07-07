@@ -10,29 +10,32 @@
     <p>Brand name:</p>
     <p><input id="brand" type="text"></p>
     <button onclick="search()">Search</button>
-    <div id="responsediv"></div>
-    <script>
-        function search() {
-            $.post("", {
-                    brand: $("#brand").val()
-                },
-                function(data, status) {
-                    txt = "<table border = 1>"
-                    txt += "<tr><th>Brand</th><th>Manufacturer</th></tr>"
-                    for (obj in data) {
-                        txt += "<tr>"
-                        for (key in data[obj]) {
-                            txt += "<td>" + data[obj][key] + "</td>"
+    <div id="result"></div>
+    <table id="resultTable" border=1>
+        <tr>
+            <th>Brand</th>
+        </tr>
+        <script>
+            function search() {
+                $.post("", {
+                        brand: $("#brand").val()
+                    },
+                    function(data, status) {
+                        txt = ""
+                        for (obj in data) {
+                            txt += "<tr>"
+                            for (key in data[obj]) {
+                                txt += "<td>" + data[obj][key] + "</td>"
+                            }
+                            txt += "</tr>"
                         }
-                        txt += "</tr>"
+                        txt += "</table>"
+                        $("#resultTable").append(txt)
                     }
-                    txt += "</table>"
-                    $("#responsediv").html(txt)
-                }
-            );
-        }
+                );
+            }
 
-    </script>
+        </script>
 </body>
 
 </html>
