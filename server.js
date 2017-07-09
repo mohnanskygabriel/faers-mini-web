@@ -1,6 +1,6 @@
 var http = require('http'),
     fs = require('fs'),
-    pgClient = require('./search/pgClient.js');
+    pgClient = require('./pgdb/pgHost.js');
 
 http.createServer(function (request, response) {
     if (request.method === "GET") {
