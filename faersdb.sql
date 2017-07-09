@@ -1526,6 +1526,429 @@ GRANT USAGE ON SCHEMA faers_users TO www_clients;
 GRANT USAGE ON SCHEMA faers_users TO www_hosts;
 
 
+--
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- Name: active_substance; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE active_substance TO www_hosts;
+GRANT SELECT ON TABLE active_substance TO www_clients;
+
+
+--
+-- Name: active_substance_id_seq; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON SEQUENCE active_substance_id_seq TO www_hosts;
+GRANT SELECT ON SEQUENCE active_substance_id_seq TO www_clients;
+
+
+--
+-- Name: drug; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE drug TO www_hosts;
+GRANT SELECT ON TABLE drug TO www_clients;
+
+
+--
+-- Name: drug_id_seq; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON SEQUENCE drug_id_seq TO www_hosts;
+GRANT SELECT ON SEQUENCE drug_id_seq TO www_clients;
+
+
+--
+-- Name: event; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE event TO www_hosts;
+GRANT SELECT ON TABLE event TO www_clients;
+
+
+--
+-- Name: event_id_seq; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON SEQUENCE event_id_seq TO www_hosts;
+GRANT SELECT ON SEQUENCE event_id_seq TO www_clients;
+
+
+--
+-- Name: event_result; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE event_result TO www_hosts;
+GRANT SELECT ON TABLE event_result TO www_clients;
+
+
+--
+-- Name: event_result_id_seq; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON SEQUENCE event_result_id_seq TO www_hosts;
+GRANT SELECT ON SEQUENCE event_result_id_seq TO www_clients;
+
+
+--
+-- Name: event_result_mapping; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE event_result_mapping TO www_hosts;
+GRANT SELECT ON TABLE event_result_mapping TO www_clients;
+
+
+--
+-- Name: faers_user; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE faers_user TO www_hosts;
+GRANT SELECT ON TABLE faers_user TO www_clients;
+
+
+--
+-- Name: faers_user_id_seq; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON SEQUENCE faers_user_id_seq TO www_hosts;
+GRANT SELECT ON SEQUENCE faers_user_id_seq TO www_clients;
+
+
+--
+-- Name: meta; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE meta TO www_hosts;
+GRANT SELECT ON TABLE meta TO www_clients;
+
+
+--
+-- Name: meta_id_seq; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON SEQUENCE meta_id_seq TO www_hosts;
+GRANT SELECT ON SEQUENCE meta_id_seq TO www_clients;
+
+
+--
+-- Name: meta_results; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE meta_results TO www_hosts;
+GRANT SELECT ON TABLE meta_results TO www_clients;
+
+
+--
+-- Name: meta_results_id_seq; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON SEQUENCE meta_results_id_seq TO www_hosts;
+GRANT SELECT ON SEQUENCE meta_results_id_seq TO www_clients;
+
+
+--
+-- Name: openfda_drug_info; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_application_number; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_application_number TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_application_number TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_brand_name; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_brand_name TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_brand_name TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_generic_name; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_generic_name TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_generic_name TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_id_seq; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON SEQUENCE openfda_drug_info_id_seq TO www_hosts;
+GRANT SELECT ON SEQUENCE openfda_drug_info_id_seq TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_manufacturer_name; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_manufacturer_name TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_manufacturer_name TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_nui; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_nui TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_nui TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_package_ndc; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_package_ndc TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_package_ndc TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_pharm_class_cs; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_pharm_class_cs TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_pharm_class_cs TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_pharm_class_epc; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_pharm_class_epc TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_pharm_class_epc TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_pharm_class_moa; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_pharm_class_moa TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_pharm_class_moa TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_pharm_class_pe; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_pharm_class_pe TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_pharm_class_pe TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_product_ndc; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_product_ndc TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_product_ndc TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_product_type; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_product_type TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_product_type TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_route; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_route TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_route TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_rxcui; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_rxcui TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_rxcui TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_spl_id; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_spl_id TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_spl_id TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_spl_set_id; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_spl_set_id TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_spl_set_id TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_substance_name; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_substance_name TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_substance_name TO www_clients;
+
+
+--
+-- Name: openfda_drug_info_unii; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE openfda_drug_info_unii TO www_hosts;
+GRANT SELECT ON TABLE openfda_drug_info_unii TO www_clients;
+
+
+--
+-- Name: patient; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE patient TO www_hosts;
+GRANT SELECT ON TABLE patient TO www_clients;
+
+
+--
+-- Name: patient_death; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE patient_death TO www_hosts;
+GRANT SELECT ON TABLE patient_death TO www_clients;
+
+
+--
+-- Name: patient_death_id_seq; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON SEQUENCE patient_death_id_seq TO www_hosts;
+GRANT SELECT ON SEQUENCE patient_death_id_seq TO www_clients;
+
+
+--
+-- Name: patient_drug_mapping; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE patient_drug_mapping TO www_hosts;
+GRANT SELECT ON TABLE patient_drug_mapping TO www_clients;
+
+
+--
+-- Name: patient_id_seq; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON SEQUENCE patient_id_seq TO www_hosts;
+GRANT SELECT ON SEQUENCE patient_id_seq TO www_clients;
+
+
+--
+-- Name: patient_reaction_mapping; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE patient_reaction_mapping TO www_hosts;
+GRANT SELECT ON TABLE patient_reaction_mapping TO www_clients;
+
+
+--
+-- Name: preferred_drug; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE preferred_drug TO www_hosts;
+GRANT SELECT ON TABLE preferred_drug TO www_clients;
+
+
+--
+-- Name: primary_source; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE primary_source TO www_hosts;
+GRANT SELECT ON TABLE primary_source TO www_clients;
+
+
+--
+-- Name: primary_source_id_seq; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON SEQUENCE primary_source_id_seq TO www_hosts;
+GRANT SELECT ON SEQUENCE primary_source_id_seq TO www_clients;
+
+
+--
+-- Name: reaction; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE reaction TO www_hosts;
+GRANT SELECT ON TABLE reaction TO www_clients;
+
+
+--
+-- Name: reaction_id_seq; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON SEQUENCE reaction_id_seq TO www_hosts;
+GRANT SELECT ON SEQUENCE reaction_id_seq TO www_clients;
+
+
+--
+-- Name: receiver; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE receiver TO www_hosts;
+GRANT SELECT ON TABLE receiver TO www_clients;
+
+
+--
+-- Name: receiver_id_seq; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON SEQUENCE receiver_id_seq TO www_hosts;
+GRANT SELECT ON SEQUENCE receiver_id_seq TO www_clients;
+
+
+--
+-- Name: report_duplicate; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE report_duplicate TO www_hosts;
+GRANT SELECT ON TABLE report_duplicate TO www_clients;
+
+
+--
+-- Name: report_duplicate_id_seq; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON SEQUENCE report_duplicate_id_seq TO www_hosts;
+GRANT SELECT ON SEQUENCE report_duplicate_id_seq TO www_clients;
+
+
+--
+-- Name: sender; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON TABLE sender TO www_hosts;
+GRANT SELECT ON TABLE sender TO www_clients;
+
+
+--
+-- Name: sender_id_seq; Type: ACL; Schema: faers; Owner: faers_data_admin
+--
+
+GRANT SELECT ON SEQUENCE sender_id_seq TO www_hosts;
+GRANT SELECT ON SEQUENCE sender_id_seq TO www_clients;
+
+
 SET search_path = faers_users, pg_catalog;
 
 --
@@ -1542,8 +1965,8 @@ SET search_path = faers, pg_catalog;
 --
 
 ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA faers REVOKE ALL ON TABLES  FROM postgres;
-ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA faers GRANT SELECT ON TABLES  TO www_hosts;
 ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA faers GRANT SELECT ON TABLES  TO www_clients;
+ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA faers GRANT SELECT ON TABLES  TO www_hosts;
 
 
 --
