@@ -7,35 +7,73 @@
 </head>
 
 <body>
-    <p>Brand name:</p>
-    <p><input id="brand" type="text"></p>
-    <button onclick="search()">Search</button>
-    <div id="result"></div>
-    <table id="resultTable" border=1>
-        <tr>
-            <th>Brand</th>
-        </tr>
-        <script>
-            function search() {
-                $.post("", {
-                        brand: $("#brand").val()
-                    },
-                    function(data, status) {
-                        txt = ""
-                        for (obj in data) {
-                            txt += "<tr>"
-                            for (key in data[obj]) {
-                                txt += "<td>" + data[obj][key] + "</td>"
-                            }
-                            txt += "</tr>"
+    <header id="statusHeader">
+        <!--inputs e-mail and password show after clicking on sign in()-->
+        <p>
+            <!--e-mail: <input id="e-mail" type="text"> password: <input id="password" type="password">-->
+            <button onclick="login()">Sign In</button> <button onclick="register()">Sign Up</button>
+        </p>
+    </header>
+    <header id="bannerHeader">
+        <div id="banner">
+            <h1>Find drug adverse event</h1>
+        </div>
+    </header>
+    <div id="searchInput">
+        <p>Drug name: <input id="brand" type="text"> Manufacturer name: <input id="manufacturer" type="text"> <button onclick="search()">Search</button></p>
+    </div>
+    <div id="result">
+        <table id="resultTable" border=1>
+            <thead>
+                <tr>
+                    <th>Drug name</th>
+                    <th>Manufacturer name</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script>
+        function search() {
+            $("#resultTable tbody").empty()
+            $.post("", {
+                    find: 'drug',
+                    brand: $("#brand").val(),
+                    manufacturer: $("#manufacturer").val()
+                },
+                function(data, status) {
+                    for (obj in data) {
+                        var row = $('<tr></tr>')
+                        for (key in data[obj]) {
+                            column = $('<td></td>').text(data[obj][key])
+                            row.append(column)
                         }
-                        txt += "</table>"
-                        $("#resultTable").append(txt)
+                        row.on('click', make)
+                        $("#resultTable tbody").append(row)
                     }
-                );
-            }
+                }
+            );
+        };
 
-        </script>
+        function make() {
+            $.post("", {
+                    find: 'reaction',
+                    brand: $($(this).children()[0]).text(),
+                    manufacturer: $($(this).children()[1]).text()
+                },
+                function(data, status) {
+                    /* for (obj in data) {
+                        newValues = []
+                        for (key in data[obj]) {
+                            newValues.push(($('<td></td>').text(data[obj][key])))
+                        }
+                    }
+                this.append(newValues)*/
+                }
+            );
+        }
+
+    </script>
 </body>
 
 </html>

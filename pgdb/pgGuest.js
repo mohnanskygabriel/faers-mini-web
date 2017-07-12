@@ -5,7 +5,7 @@ const {
 module.exports = {
     getClient: function () {
         return new Client({
-            user: "faers_wwweb_host",
+            user: "faers_wwweb_guest",
             host: "127.0.0.1",
             database: "faersdb",
             password: "faersHostpass351",
