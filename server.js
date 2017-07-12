@@ -26,12 +26,13 @@ http.createServer(function (request, response) {
         }
     } else if (request.method === "POST") {
         //find = drug/reaction; brand= '%'; manufacturer = '%'
+        //TODO: make a filter for filtering +, %26
         request.on("data", function (data) {
             data = data.toString()
             find = data.split("&")[0].split("=")[1]
             if (find === 'drug') {
-                searchedBrand = data.split("&")[1].split("=")[1]
-                searchedManufacturer = data.split("&")[2].split("=")[1]
+                searchedBrand = data.split("&")[1].split("=")[1].replace(/\+/g, " ").replace(/\%26/g, "\&")
+                searchedManufacturer = data.split("&")[2].split("=")[1].replace(/\+/g, " ").replace(/\%26/g, "\&")
                 if (searchedBrand.length > 0 && searchedManufacturer.length > 0) {
                     sql = "SELECT drug_name, manufacturer_name, similarity(drug_name, " + "\'" + searchedBrand + "\'" + "), similarity(manufacturer_name, " + "\'" + searchedManufacturer + "\'" + ") FROM faers.drug_short WHERE drug_name LIKE(\'%" + searchedBrand + "%\') AND manufacturer_name LIKE(\'%" + searchedManufacturer + "%\') ORDER BY 3 DESC,4 DESC,1,2"
                 } else if (searchedBrand.length > 0 && searchedManufacturer.length == 0) {

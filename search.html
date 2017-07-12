@@ -33,9 +33,31 @@
             <tbody></tbody>
         </table>
     </div>
+    <div id="drugAdverseEvent">
+        <table id="drugAdverseEventTable" border=1>
+            <thead>
+                <tr>
+                    <th>Reaction</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button id="closeButton">Close</button>
+    </div>
     <script>
+        $(document).ready(function() {
+            hideDiv($("#drugAdverseEvent"))
+        });
+
+        $("#closeButton").on("click", function() {
+            hideDiv($("#drugAdverseEvent"))
+        })
+
         function search() {
+            hideDiv($("#drugAdverseEvent"))
             $("#resultTable tbody").empty()
+            $("#drugAdverseEventTable tbody").empty()
             $.post("", {
                     find: 'drug',
                     brand: $("#brand").val(),
@@ -62,15 +84,22 @@
                     manufacturer: $($(this).children()[1]).text()
                 },
                 function(data, status) {
-                    /* for (obj in data) {
-                        newValues = []
+                    $("#drugAdverseEventTable tbody").empty()
+                    for (obj in data) {
+                        var row = $('<tr></tr>')
                         for (key in data[obj]) {
-                            newValues.push(($('<td></td>').text(data[obj][key])))
+                            column = $('<td></td>').text(data[obj][key])
+                            row.append(column)
                         }
+                        $("#drugAdverseEventTable tbody").append(row)
                     }
-                this.append(newValues)*/
                 }
             );
+            $("#drugAdverseEvent").show()
+        }
+
+        function hideDiv(div) {
+            $(div).hide()
         }
 
     </script>
