@@ -4,6 +4,8 @@
   "description": "view and rest module for faers data",
   "main": "server.js",
   "dependencies": {
+    "express": "^4.15.3",
+    "livereload": "^0.6.2",
     "pg": "^6.4.0"
   },
   "devDependencies": {},

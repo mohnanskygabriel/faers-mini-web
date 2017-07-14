@@ -1,0 +1,158 @@
+/*div coloring for development*/
+
+
+/*
+#adverseEventDiv {
+    background-color: blue;
+}
+
+#resultSection {
+    background-color: brown;
+}
+
+#drugSearchResultDiv {
+    background-color: aqua;
+}
+
+#drugTable {
+    max-width: 80%;
+    background: red;
+}
+
+#statusHeader {
+    background: yellow;
+}
+
+#loginLabelsDiv {
+    background: red;
+}
+
+#loginButtonsDiv {
+    background: brown;
+}
+
+footer {
+    background: yellow;
+}
+
+#banner {
+    background: pink;
+}
+
+*/
+
+
+/*div coloring for development*/
+
+
+/*classes-begin*/
+
+.resultTable {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.resultTable th {
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
+    text-align: center;
+}
+
+.resultTable td {
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+    text-align: center;
+}
+
+
+/*classes-end*/
+
+
+/*divs-begin*/
+
+#adverseEventDiv {
+    background: rgba(220, 255, 150, 1);
+    border-style: outset;
+    display: -webkit-flex;
+    justify-content: flex-end;
+    position: fixed;
+    max-height: 80%;
+    max-width: 80%;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding: 5px;
+    margin-bottom: 70px;
+    bottom: 0px;
+}
+
+#adverseEventTable {
+    background: rgba(0, 255, 0, 0.5);
+    margin-top: 30px;
+}
+
+#banner {
+    text-align: center;
+    )
+}
+
+#closeButton {
+    position: fixed;
+}
+
+#drugTable {
+    min-width: 80%;
+    max-width: 80%;
+}
+
+#drugSearchResultDiv {
+    display: -webkit-flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    min-width: 80%;
+    max-width: 80%;
+}
+
+#loginButtonsDiv {
+    text-align: right;
+}
+
+#loginLabelsDiv {
+    padding-top: 5px;
+    text-align: right;
+}
+
+#resultSection {
+    display: -webkit-flex;
+    justify-content: center;
+}
+
+#searchInput {
+    margin-top: 150px;
+    display: -webkit-flex;
+    justify-content: center;
+}
+
+#statusHeader {
+    background-color: aqua;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    width: 80%;
+}
+
+
+/*divs-end*/
+
+footer {
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+    padding-top: 10px;
+    position: fixed;
+    text-align: center;
+    width: 80%;
+}

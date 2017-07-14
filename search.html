@@ -2,76 +2,90 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Search</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/stylesheet.css" rel="stylesheet">
+    <script src="javascripts/bootstrap.min.js"></script>
 </head>
 
 <body>
     <header id="statusHeader">
-        <!--inputs e-mail and password show after clicking on sign in()-->
-        <p>
-            <!--e-mail: <input id="e-mail" type="text"> password: <input id="password" type="password">-->
-            <button onclick="login()">Sign In</button> <button onclick="register()">Sign Up</button>
-        </p>
-    </header>
-    <header id="bannerHeader">
+        <div id="loginLabelsDiv">
+            <p>e-mail: <input id="e-mail" type="text"> password: <input id="password" type="password"></p>
+        </div>
+        <div id="loginButtonsDiv">
+            <p><button onclick="login()">Sign In</button> <button onclick="register()">Sign Up</button></p>
+        </div>
         <div id="banner">
             <h1>Find drug adverse event</h1>
         </div>
     </header>
+
+
+
     <div id="searchInput">
         <p>Drug name: <input id="brand" type="text"> Manufacturer name: <input id="manufacturer" type="text"> <button onclick="search()">Search</button></p>
     </div>
-    <div id="result">
-        <table id="resultTable" border=1>
-            <thead>
-                <tr>
-                    <th>Drug name</th>
-                    <th>Manufacturer name</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </div>
-    <div id="drugAdverseEvent">
-        <table id="drugAdverseEventTable" border=1>
-            <thead>
-                <tr>
-                    <th>Reaction</th>
-                    <th>Quantity</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-        <button id="closeButton">Close</button>
-    </div>
+    <section id="resultSection">
+        <div id="drugSearchResultDiv">
+            <table id="drugTable" class="resultTable">
+                <thead>
+                    <tr>
+                        <th>Drug name</th>
+                        <th>Manufacturer name</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="adverseEventDiv">
+            <button id="closeButton">Close</button>
+            <table id="adverseEventTable" class="resultTable">
+                <thead>
+                    <tr>
+                        <th>Reaction</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+    <footer>
+        <p>THIS IS A PAGE FOOTER</p>
+    </footer>
     <script>
         $(document).ready(function() {
-            hideDiv($("#drugAdverseEvent"))
+            hideDiv($("#adverseEventDiv"))
+            hideDiv($("#loginLabelsDiv"))
         });
 
         $("#closeButton").on("click", function() {
-            hideDiv($("#drugAdverseEvent"))
+            hideDiv($("#adverseEventDiv"))
         })
 
         function search() {
-            hideDiv($("#drugAdverseEvent"))
-            $("#resultTable tbody").empty()
-            $("#drugAdverseEventTable tbody").empty()
+            hideDiv($("#adverseEventDiv"))
+            $("#drugTable tbody").empty()
+            $("#adverseEventTable tbody").empty()
             $.post("", {
-                    find: 'drug',
+                    find: "drug",
                     brand: $("#brand").val(),
                     manufacturer: $("#manufacturer").val()
                 },
                 function(data, status) {
                     for (obj in data) {
-                        var row = $('<tr></tr>')
+                        var row = $("<tr></tr>")
                         for (key in data[obj]) {
-                            column = $('<td></td>').text(data[obj][key])
+                            column = $("<td></td>").text(data[obj][key])
                             row.append(column)
                         }
-                        row.on('click', make)
-                        $("#resultTable tbody").append(row)
+                        row.on("click", make)
+                        $("#drugTable tbody").append(row)
                     }
                 }
             );
@@ -79,27 +93,35 @@
 
         function make() {
             $.post("", {
-                    find: 'reaction',
+                    find: "reaction",
                     brand: $($(this).children()[0]).text(),
                     manufacturer: $($(this).children()[1]).text()
                 },
                 function(data, status) {
-                    $("#drugAdverseEventTable tbody").empty()
+                    $("#adverseEventTable tbody").empty()
                     for (obj in data) {
-                        var row = $('<tr></tr>')
+                        var row = $("<tr></tr>")
                         for (key in data[obj]) {
-                            column = $('<td></td>').text(data[obj][key])
+                            column = $("<td></td>").text(data[obj][key])
                             row.append(column)
                         }
-                        $("#drugAdverseEventTable tbody").append(row)
+                        $("#adverseEventTable tbody").append(row)
                     }
                 }
             );
-            $("#drugAdverseEvent").show()
+            showDiv($("#adverseEventDiv"))
         }
 
         function hideDiv(div) {
             $(div).hide()
+        }
+
+        function showDiv(div) {
+            $(div).show()
+        }
+
+        function login() {
+            showDiv($("#loginLabelsDiv"))
         }
 
     </script>
