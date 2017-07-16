@@ -13,22 +13,53 @@
 </head>
 
 <body>
-    <header id="statusHeader">
-        <div id="loginLabelsDiv">
-            <p>e-mail: <input id="e-mail" type="text"> password: <input id="password" type="password"></p>
-        </div>
-        <div id="loginButtonsDiv">
-            <p><button onclick="login()">Sign In</button> <button onclick="register()">Sign Up</button></p>
-        </div>
-        <div id="banner">
-            <h1>Find drug adverse event</h1>
-        </div>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+                    <a class="navbar-brand" href="#">FAERS mini</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li class="active"><a href="http://localhost:1337/search">Search</a></li>
+                        <li><a href="#">Page 2</a></li>
+                        <li><a href="#">Page 3</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <form class="form-inline">
+                                <div id="loginLabelsDiv" class="collapse">
+                                    <label for="email">e-mail address:</label>
+                                    <input type="email" class="form-control" id="email">
+                                    <label for="pass">password:</label>
+                                    <input type="password" class="form-control" id="pass">
+                                </div>
+                            </form>
+                        </li>
+                        <li>
+                            <div class="btn-group">
+                                <button class="btn btn-primary navbar-btn" data-toggle="collapse" data-target="#loginLabelsDiv">Sign In</button>
+                                <button class="btn btn-primary navbar-btn" onclick="register()">Sign Up</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
-
-
     <div id="searchInput">
-        <p>Drug name: <input id="brand" type="text"> Manufacturer name: <input id="manufacturer" type="text"> <button onclick="search()">Search</button></p>
+            <!--<form class="form-inline">
+                Drug name: <input id="brand" type="text" class="form-control"> Manufacturer name: <input id="manufacturer" type="text" class="form-control"> <button id="search" onclick="search()">Search</button>
+            </form>-->
+        
+        Drug name: <input id="brand" type="text" class="form-control"> Manufacturer name: <input id="manufacturer" type="text" class="form-control"> <button id="search" onclick="search()">Search</button>
     </div>
     <section id="resultSection">
         <div id="drugSearchResultDiv">
@@ -58,10 +89,10 @@
     <footer>
         <p>THIS IS A PAGE FOOTER</p>
     </footer>
+
     <script>
         $(document).ready(function() {
-            hideDiv($("#adverseEventDiv"))
-            hideDiv($("#loginLabelsDiv"))
+            hideDiv($("#adverseEventDiv"));
         });
 
         $("#closeButton").on("click", function() {

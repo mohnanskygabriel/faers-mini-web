@@ -1,4 +1,4 @@
-/*div coloring for development*/
+/**************div coloring for development**************/
 
 
 /*
@@ -19,33 +19,48 @@
     background: red;
 }
 
-#statusHeader {
-    background: yellow;
+header{
+     background: yellow;
 }
 
-#loginLabelsDiv {
-    background: red;
-}
-
-#loginButtonsDiv {
-    background: brown;
-}
 
 footer {
     background: yellow;
 }
-
-#banner {
-    background: pink;
-}
-
 */
 
 
-/*div coloring for development*/
+/**************header**************/
+
+header {
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    width: 80%;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 1);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+}
+
+#loginLabelsDiv {
+    position: relative;
+    margin: 8px;
+}
+
+.btn-group {
+    position: relative;
+    margin-left: 8px;
+    margin-right: 8px;
+}
 
 
-/*classes-begin*/
+/**************search result**************/
 
 .resultTable {
     border-style: solid;
@@ -65,12 +80,6 @@ footer {
     padding: 5px;
     text-align: center;
 }
-
-
-/*classes-end*/
-
-
-/*divs-begin*/
 
 #adverseEventDiv {
     background: rgba(220, 255, 150, 1);
@@ -92,11 +101,6 @@ footer {
     margin-top: 30px;
 }
 
-#banner {
-    text-align: center;
-    )
-}
-
 #closeButton {
     position: fixed;
 }
@@ -114,37 +118,19 @@ footer {
     max-width: 80%;
 }
 
-#loginButtonsDiv {
-    text-align: right;
-}
-
-#loginLabelsDiv {
-    padding-top: 5px;
-    text-align: right;
-}
-
 #resultSection {
     display: -webkit-flex;
     justify-content: center;
 }
 
 #searchInput {
-    margin-top: 150px;
-    display: -webkit-flex;
-    justify-content: center;
-}
-
-#statusHeader {
-    background-color: aqua;
-    top: 0%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 0);
     position: fixed;
     width: 80%;
+    margin-top: 200px;
+    text-align: center;
 }
-
-
-/*divs-end*/
 
 footer {
     bottom: 0%;
