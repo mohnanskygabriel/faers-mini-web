@@ -6,6 +6,8 @@ const express = require("express"),
 
 app.use(express.static("public"));
 
+var port = process.env.PORT || 8080;
+
 app.get("/", function (req, res) {
     fs.readFile("./views/index.html", function (err, html) {
         if (err) throw err;
@@ -114,8 +116,8 @@ app.post("/search", function (req, res) {
     });
 });
 
-app.listen(1337, function () {
-    console.log("Server running at http://127.0.0.1:1337/");
+app.listen(port, function () {
+    console.log("Server running at http://localhost:" + port);
 });
 
 var lrserver = livereload.createServer();
