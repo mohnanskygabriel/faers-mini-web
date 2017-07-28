@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/stylesheet.css" rel="stylesheet">
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/search.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+                    <a class="navbar-brand" href="http://localhost:1337/">FAERS mini</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="http://localhost:1337/">Home</a></li>
+                        <li><a href="http://localhost:1337/search">Search</a></li>
+                        <li class="active"><a href="http://localhost:1337/contact">Contact</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <form class="form-inline">
+                                <div id="loginLabelsDiv" class="collapse">
+                                    <label for="email">e-mail address:</label>
+                                    <input type="email" class="form-control" id="email">
+                                    <label for="pass">password:</label>
+                                    <input type="password" class="form-control" id="pass">
+                                </div>
+                            </form>
+                        </li>
+                        <li>
+                            <div class="btn-group">
+                                <button class="btn btn-primary navbar-btn" data-toggle="collapse" data-target="#loginLabelsDiv">Sign In</button>
+                                <button class="btn btn-primary navbar-btn" onclick="register()">Sign Up</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <section id="resultSection">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus bibendum tempor. Integer elementum, magna vitae viverra cursus, elit arcu consequat magna, vulputate sodales nibh eros eget lectus. Duis ut rutrum turpis, sit amet eleifend ex. Duis fermentum diam non urna pretium fermentum. Cras at eleifend turpis. Donec venenatis rhoncus arcu, non porta nisi luctus non. Vivamus quis sapien volutpat ligula cursus malesuada.</p>
+        <p>Etiam gravida, orci sed tempus pulvinar, ante massa ultricies tellus, et pulvinar elit lectus et diam. Donec sit amet nulla arcu. Donec ex massa, lobortis vel est non, varius porta arcu. Nam quam eros, faucibus ut sagittis at, tincidunt a tellus. Vestibulum a ornare nibh. Nunc dolor justo, semper eget tincidunt eu, tristique ut tellus. Quisque sollicitudin a ex vitae elementum. Etiam non tempor erat, at ullamcorper enim. Maecenas varius mollis turpis. Donec sodales, est ac elementum fringilla, justo turpis mollis nunc, vel fringilla enim eros nec. </p>
+    </section>
+    <footer>
+        <div id="footerDiv">
+            <div id="footerLeft">
+                <img class="footerLogo" src="/images/openFDA_logo.png">
+            </div>
+            <div id="footerMiddle">
+                <p>&copy; Gabriel Mohňanský 2017</p>
+            </div>
+            <div id="footerRight">
+                <img class="footerLogo" src="/images/openFDA_logo.png">
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

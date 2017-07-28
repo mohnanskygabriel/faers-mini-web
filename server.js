@@ -7,7 +7,7 @@ const express = require("express"),
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
-    fs.readFile("./index.html", function (err, html) {
+    fs.readFile("./views/index.html", function (err, html) {
         if (err) throw err;
         res.writeHeader(200, {
             "Content-Type": "text/html"
@@ -18,7 +18,18 @@ app.get("/", function (req, res) {
 });
 
 app.get("/search", function (req, res) {
-    fs.readFile("./search.html", function (err, html) {
+    fs.readFile("./views/search.html", function (err, html) {
+        if (err) throw err;
+        res.writeHeader(200, {
+            "Content-Type": "text/html"
+        });
+        res.write(html);
+        res.end();
+    });
+});
+
+app.get("/contact", function (req, res) {
+    fs.readFile("./views/contact.html", function (err, html) {
         if (err) throw err;
         res.writeHeader(200, {
             "Content-Type": "text/html"
@@ -102,8 +113,6 @@ app.post("/search", function (req, res) {
         };
     });
 });
-
-
 
 app.listen(1337, function () {
     console.log("Server running at http://127.0.0.1:1337/");
