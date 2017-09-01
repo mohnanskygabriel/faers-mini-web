@@ -27,7 +27,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="https://faers-mini.herokuapp.com/">Home</a></li>
+                        <li><a href="https://faers-mini.herokuapp.com/">Home</a></li>
                         <li><a href="https://faers-mini.herokuapp.com/search">Search</a></li>
                         <li class="active"><a href="https://faers-mini.herokuapp.com/contact">Contact</a></li>
                     </ul>
@@ -55,8 +55,7 @@
 
     </header>
     <section id="resultSection">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus bibendum tempor. Integer elementum, magna vitae viverra cursus, elit arcu consequat magna, vulputate sodales nibh eros eget lectus. Duis ut rutrum turpis, sit amet eleifend ex. Duis fermentum diam non urna pretium fermentum. Cras at eleifend turpis. Donec venenatis rhoncus arcu, non porta nisi luctus non. Vivamus quis sapien volutpat ligula cursus malesuada.</p>
-        <p>Etiam gravida, orci sed tempus pulvinar, ante massa ultricies tellus, et pulvinar elit lectus et diam. Donec sit amet nulla arcu. Donec ex massa, lobortis vel est non, varius porta arcu. Nam quam eros, faucibus ut sagittis at, tincidunt a tellus. Vestibulum a ornare nibh. Nunc dolor justo, semper eget tincidunt eu, tristique ut tellus. Quisque sollicitudin a ex vitae elementum. Etiam non tempor erat, at ullamcorper enim. Maecenas varius mollis turpis. Donec sodales, est ac elementum fringilla, justo turpis mollis nunc, vel fringilla enim eros nec. </p>
+        <p id="emad">E-mail: </p>
     </section>
     <footer>
         <div id="footerDiv">
@@ -71,6 +70,17 @@
             </div>
         </div>
     </footer>
+       <script>
+        x = "gabriel";
+        y = "mohnansky";
+        z = "(dot)com";
+        v = "gmail";
+        w = "(at)";
+        $(document).ready(function() {
+            $("#emad").append(y + x + w + v + z);
+        });
+
+    </script>
 
 </body>
 
