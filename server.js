@@ -112,6 +112,34 @@ app.post("/search", function (req, res) {
                         });
                     }
                 });
+        } else if (find === "substance") {
+            brand = data.split("&")[1].split("=")[1].replace(/\+/g, " ");
+            manufacturer = data.split("&")[2].split("=")[1].replace(/\+/g, " ").replace(/\%26/g, "\&");
+            //console.log('Brand: ' + brand + ' Manufacturer: ' + manufacturer);
+            sql = "SELECT * FROM faers.get_substances(\'" + brand + "\', \'" + manufacturer + "\')";
+            client = pgGuestClient.getClient();
+            client.connect();
+            client.query(sql,
+                (err, dbResponse) => {
+                    jsonObject = [];
+                    if (err) {
+                        console.log(err.stack);
+                    } else {
+                        for (row in dbResponse.rows) {
+                            jsonObject.push({
+                                substance: dbResponse.rows[row].substance,
+                            });
+                        }
+                        res.writeHeader(200, {
+                            "Content-Type": "application/json; charsert=UTF-8"
+                        });
+                        // res.write(JSON.stringify(jsonObject));
+                        res.end(JSON.stringify(jsonObject));
+                        client.end(function (error) {
+                            if (error) throw err;
+                        });
+                    }
+                });
         };
     });
 });
